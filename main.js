@@ -122,6 +122,7 @@ Highcharts.ajax({
         bubbleData.forEach( function (entry, i) {
             entry.name = titles[i]
             entry.description = descriptions[i]
+            entry.box = box[i]
             if (entry.y >= 60) {
                 fresh.data.push(entry)
             } else {
@@ -204,7 +205,9 @@ Highcharts.ajax({
                     return (
                         "<b>" + this.point.name + " (" + this.point.x.getFullYear() +") " + "</b><br>" + 
                         "<b>Score: </b>" + this.point.y + "% <br>" + 
-                        "<b>Budget: </b> $" + this.point.z / 1000000 + "M <br>" + this.point.description
+                        "<b>Budget: </b> $" + this.point.z / 1000000 + "M <br>" +
+                        "<b>Box: </b> $" + (this.point.box / 1000000).toPrecision(3) + "M <br>"
+                        + this.point.description
                     )
                 },
                 shared: true
