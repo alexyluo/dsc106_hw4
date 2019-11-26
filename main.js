@@ -24,8 +24,6 @@ Highcharts.ajax({
             budget.push(Number(movie.Budget.replace(/[^0-9.-]+/g,"")))
             descriptions.push(movie.Description)
         })
-        console.log(descriptions)
-    
         var roSeries = [
         {
             type: 'column',
